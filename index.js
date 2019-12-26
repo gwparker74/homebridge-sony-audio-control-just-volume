@@ -349,7 +349,7 @@ SonyAudioControlReceiver.prototype = {
           //this.soundMode.surroundService.getCharacteristic(Characteristic.On).getValue();
           //callback();
         //}
-      }.bind(this));
+      //}.bind(this));
     } else {
       this.log("Issuing mute command since receiver is on!");
 
