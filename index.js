@@ -210,18 +210,18 @@ SonyAudioControlReceiver.prototype = {
 
     receiverServices.push(volumeService);
 
-    this.log("Creating power service!");
-    var powerService = new Service.Switch(this.name, this.name);
+    //this.log("Creating power service!");
+    //var powerService = new Service.Switch(this.name, this.name);
 
-    this.log("... configuring power characteristic");
-    powerService
-      .getCharacteristic(Characteristic.On)
-      .on("get", this.getPowerState.bind(this))
-      .on("set", this.setPowerState.bind(this));
+    //this.log("... configuring power characteristic");
+    //powerService
+      //.getCharacteristic(Characteristic.On)
+      //.on("get", this.getPowerState.bind(this))
+      //.on("set", this.setPowerState.bind(this));
 
-    this.power.service = powerService;
+    //this.power.service = powerService;
 
-    receiverServices.push(powerService);
+    //receiverServices.push(powerService);
 
     //this.log("Creating surround service!");
     //var surroundService = new Service.Switch("Surround Mode", "Surround Mode");
