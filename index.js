@@ -249,36 +249,36 @@ SonyAudioControlReceiver.prototype = {
 
     //receiverServices.push(stereoService);
 
-    this.log("Creating input services!");
+    //this.log("Creating input services!");
 
-    var inputServices = [];
+    //var inputServices = [];
 
-    for (let i = 0; i < this.inputs.length; i++) {
+    //for (let i = 0; i < this.inputs.length; i++) {
 
-      this.log("Creating input service %s!", this.inputs[i].name);
+      //this.log("Creating input service %s!", this.inputs[i].name);
 
-      var inputGetFunctionBody = "this.getInputStateGeneral(callback, \'" + this.inputs[i].uri + "\');";
-      var getInputFunction = new Function('callback', inputGetFunctionBody);
-      this.inputs[i].getInputState = getInputFunction.bind(this);
+      //var inputGetFunctionBody = "this.getInputStateGeneral(callback, \'" + this.inputs[i].uri + "\');";
+      //var getInputFunction = new Function('callback', inputGetFunctionBody);
+      //this.inputs[i].getInputState = getInputFunction.bind(this);
 
-      this.inputs[i].onBody = this.input.onBodyBasis.replace("%s", this.inputs[i].uri);
-      var inputSetFunctionBody = "this.setInputStateGeneral(newInputState, callback, " + i + ", \'" + this.inputs[i].onBody + "\');";
-      var setInputFunction = new Function('newInputState', 'callback', inputSetFunctionBody);
-      this.inputs[i].setInputState = setInputFunction.bind(this);
+      //this.inputs[i].onBody = this.input.onBodyBasis.replace("%s", this.inputs[i].uri);
+      //var inputSetFunctionBody = "this.setInputStateGeneral(newInputState, callback, " + i + ", \'" + this.inputs[i].onBody + "\');";
+      //var setInputFunction = new Function('newInputState', 'callback', inputSetFunctionBody);
+      //this.inputs[i].setInputState = setInputFunction.bind(this);
 
-      let inputService = new Service.Switch("Input " + this.inputs[i].name, this.inputs[i].name);
+      //let inputService = new Service.Switch("Input " + this.inputs[i].name, this.inputs[i].name);
 
-      this.log("... configuring input characteristic");
-      inputService
-        .getCharacteristic(Characteristic.On)
-        .on("get", this.inputs[i].getInputState.bind(this))
-        .on("set", this.inputs[i].setInputState.bind(this));
-      this.inputs[i].service = inputService;
-      inputServices.push(inputService);
-    }
+      //this.log("... configuring input characteristic");
+      //inputService
+        //.getCharacteristic(Characteristic.On)
+        //.on("get", this.inputs[i].getInputState.bind(this))
+        //.on("set", this.inputs[i].setInputState.bind(this));
+      //this.inputs[i].service = inputService;
+      //inputServices.push(inputService);
+    //}
 
-    receiverServices = receiverServices.concat(inputServices);
-    this.inputServices = inputServices;
+    //receiverServices = receiverServices.concat(inputServices);
+    //this.inputServices = inputServices;
     this.receiverServices = receiverServices;
 
     return receiverServices;
