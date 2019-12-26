@@ -327,27 +327,27 @@ SonyAudioControlReceiver.prototype = {
 
       this.log("Unmuting by powering on receiver since receiver is off!");
 
-      this._httpRequest(this.power.url, this.power.onBody, this.power.httpMethod, function (error, response, body) {
-        if (error) {
-          this.log("setPowerState() failed: %s", error.message);
-          callback(error);
-        } else if (response.statusCode !== 200) {
-          this.log("setPowerState() request returned http error: %s", response.statusCode);
-          callback(new Error("setPowerState() returned http error " + response.statusCode));
-        } else {
-          this.log("setPowerState() successfully set power state to ON");
-          this.sleep(this.receiverPowerOnDelay);
-          for (let i = 0; i < this.inputServices.length; i++) {
-            this.log("Restoring characteristics of input service " + i + " when powering on receiver to unmute!");
-            this.inputServices[i].getCharacteristic(Characteristic.On).getValue();
-          }
-          this.log("Restoring characteristics of volume service when powering on receiver to unmute!");
-          this.volume.service.getCharacteristic(Characteristic.On).getValue();
-          this.volume.service.getCharacteristic(Characteristic.Brightness).getValue();
-          this.log("Restoring characteristics of soundmode services when powering on receiver to unmute!");
-          this.soundMode.stereoService.getCharacteristic(Characteristic.On).getValue();
-          this.soundMode.surroundService.getCharacteristic(Characteristic.On).getValue();
-          callback();
+      //this._httpRequest(this.power.url, this.power.onBody, this.power.httpMethod, function (error, response, body) {
+        //if (error) {
+          //this.log("setPowerState() failed: %s", error.message);
+          //callback(error);
+        //} else if (response.statusCode !== 200) {
+          //this.log("setPowerState() request returned http error: %s", response.statusCode);
+          //callback(new Error("setPowerState() returned http error " + response.statusCode));
+        //} else {
+          //this.log("setPowerState() successfully set power state to ON");
+          //this.sleep(this.receiverPowerOnDelay);
+          //for (let i = 0; i < this.inputServices.length; i++) {
+            //this.log("Restoring characteristics of input service " + i + " when powering on receiver to unmute!");
+            //this.inputServices[i].getCharacteristic(Characteristic.On).getValue();
+          //}
+          //this.log("Restoring characteristics of volume service when powering on receiver to unmute!");
+          //this.volume.service.getCharacteristic(Characteristic.On).getValue();
+          //this.volume.service.getCharacteristic(Characteristic.Brightness).getValue();
+          //this.log("Restoring characteristics of soundmode services when powering on receiver to unmute!");
+          //this.soundMode.stereoService.getCharacteristic(Characteristic.On).getValue();
+          //this.soundMode.surroundService.getCharacteristic(Characteristic.On).getValue();
+          //callback();
         }
       }.bind(this));
     } else {
