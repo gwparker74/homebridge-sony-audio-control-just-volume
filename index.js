@@ -221,7 +221,7 @@ SonyAudioControlReceiver.prototype = {
 
     this.power.service = powerService;
 
-    receiverServices.push(powerService);
+    //receiverServices.push(powerService);
 
     //this.log("Creating surround service!");
     //var surroundService = new Service.Switch("Surround Mode", "Surround Mode");
