@@ -236,18 +236,18 @@ SonyAudioControlReceiver.prototype = {
 
     receiverServices.push(surroundService);
 
-    this.log("Creating stereo service!");
-    var stereoService = new Service.Switch("Stereo Mode", "Stereo Mode");
+    //this.log("Creating stereo service!");
+    //var stereoService = new Service.Switch("Stereo Mode", "Stereo Mode");
 
-    this.log("... configuring stereo characteristic");
-    stereoService
-      .getCharacteristic(Characteristic.On)
-      .on("get", this.getStereoState.bind(this))
-      .on("set", this.setStereoState.bind(this));
+    //this.log("... configuring stereo characteristic");
+    //stereoService
+      //.getCharacteristic(Characteristic.On)
+      //.on("get", this.getStereoState.bind(this))
+      //.on("set", this.setStereoState.bind(this));
 
-    this.soundMode.stereoService = stereoService;
+    //this.soundMode.stereoService = stereoService;
 
-    receiverServices.push(stereoService);
+    //receiverServices.push(stereoService);
 
     this.log("Creating input services!");
 
