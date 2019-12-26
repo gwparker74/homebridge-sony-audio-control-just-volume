@@ -1,6 +1,6 @@
 {
-  "name": "homebridge-sony-audio-control-volume-only",
-  "version": "2.1.3",
+  "name": "homebridge-sony-audio-control-just-volume",
+  "version": "0.0.0",
   "license": "ISC",
   "description": "Homebridge plugin to control a Sony STR-DN1080 AV-receiver",
   "keywords": [
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:gwparker74/homebridge-sony-audio-control-volume-only.git"
+    "url": "git@github.com:gwparker74/homebridge-sony-audio-control-just-volume.git"
   },
   "dependencies": {
     "npm": "^5.8.0",
