@@ -219,7 +219,7 @@ SonyAudioControlReceiver.prototype = {
       .on("get", this.getPowerState.bind(this))
       .on("set", this.setPowerState.bind(this));
 
-    this.power.service = powerService;
+    //this.power.service = powerService;
 
     //receiverServices.push(powerService);
 
